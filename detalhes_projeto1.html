@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pichuruco - Cofrinho Digital</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #F5F3EE;
+        }
+
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            max-width: 350px; /* Tamanho máximo ajustado */
+            margin: auto;
+            overflow: hidden; /* Oculta as imagens que estão fora da área visível */
+            border-radius: 8px;
+        }
+
+        .carousel-images {
+            display: flex;
+            transition: transform 0.5s ease; /* Transição suave */
+        }
+
+        .carousel-images img {
+            width: 100%;
+            height: auto; /* Mantém a proporção da imagem */
+            border-radius: 8px;
+            flex-shrink: 0; /* Impede que as imagens encolham */
+        }
+
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        .project-details {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="bg-indigo-600 text-white py-6 text-center">
+        <h1 class="text-3xl font-bold">Pichuruco - Cofrinho Digital</h1>
+    </header>
+
+    <!-- Project Details Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-7xl mx-auto project-details">
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <!-- Carrossel de Imagens -->
+                    <div class="carousel-container">
+                        <div class="carousel-images" id="carousel-images">
+                            <!-- Imagens -->
+                            <img src="imagens/pichuruco/1.png" alt="Print 1 do Pichuruco">
+                            <img src="imagens/pichuruco/2.png" alt="Print 2 do Pichuruco">
+                            <img src="imagens/pichuruco/3.png" alt="Print 3 do Pichuruco">
+                            <img src="imagens/pichuruco/4.png" alt="Print 4 do Pichuruco">
+                        </div>
+                        <!-- Navegação -->
+                        <button class="carousel-button prev" onclick="moveCarousel(-1)">❮</button>
+                        <button class="carousel-button next" onclick="moveCarousel(1)">❯</button>
+                    </div>
+                </div>
+                <div class="md:w-1/2 pl-0 md:pl-10">
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-4">Sobre o Projeto</h2>
+                    <p class="text-gray-600 mb-6">Pichuruco é um aplicativo mobile desenvolvido com Flutter que permite casais controlarem suas economias conjuntas. O aplicativo conta com recursos como sincronização de dados em tempo real via Firebase, controle de depósitos, metas de economia, e histórico de transações.</p>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Funcionalidades</h3>
+                    <ul class="list-disc pl-6 text-gray-600 mb-6">
+                        <li>Sincronização de dados em tempo real entre dispositivos.</li>
+                        <li>Criação de metas de economia e monitoramento de progresso.</li>
+                        <li>Histórico de depósitos e transferências.</li>
+                        <li>Notificações de progresso e lembretes para depósito.</li>
+                    </ul>
+
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Tecnologias Usadas</h3>
+                    <ul class="list-disc pl-6 text-gray-600 mb-6">
+                        <li>Flutter</li>
+                        <li>Firebase</li>
+                        <li>UX/UI Design</li>
+                    </ul>
+
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Objetivos do Projeto</h3>
+                    <p class="text-gray-600 mb-6">O objetivo principal do Pichuruco é criar uma ferramenta simples e eficaz para casais controlarem suas finanças de forma colaborativa e organizada. O app tem como foco a usabilidade e acessibilidade para todos os usuários, com uma interface intuitiva.</p>
+
+                    <div class="text-center mt-12">
+                        <a href="projetos.html" class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-medium px-6 py-3 rounded-lg transition duration-300">Voltar para Todos os Projetos</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        let currentIndex = 0;
+
+        function moveCarousel(direction) {
+            const carouselImages = document.getElementById("carousel-images");
+            const images = carouselImages.getElementsByTagName("img");
+            currentIndex = (currentIndex + direction + images.length) % images.length;
+            carouselImages.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+    </script>
+</body>
+</html>
