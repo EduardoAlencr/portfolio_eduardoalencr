@@ -1,0 +1,29 @@
+@import 'tailwindcss';
+
+/* Paleta do portfólio original */
+@theme {
+  --font-sans: 'Poppins', ui-sans-serif, system-ui, sans-serif;
+  --color-brand-50: #eef3f9;
+  --color-brand-100: #d6e2f0;
+  --color-brand-400: #60a5fa;
+  --color-brand-600: #1a365d;
+  --color-brand-700: #142b4a;
+  --color-ink: #181818;
+  --color-cream: #f5f3ee;
+  --color-mist: #e5e5e5;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 4rem; /* altura da navbar fixa */
+}
+
+body {
+  @apply bg-cream font-sans text-ink antialiased;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
