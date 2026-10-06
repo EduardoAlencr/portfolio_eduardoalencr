@@ -2,9 +2,16 @@ import type { Experience } from '../types'
 
 export const experiences: Experience[] = [
   {
+    role: 'Atendimento, Administrativo e Logística',
+    company: 'Casa Pastelaria · negócio familiar',
+    period: 'Atual',
+    description:
+      'Atuo em múltiplas funções: atendimento ao cliente, rotinas administrativas, controle de estoque e entregas do delivery.',
+  },
+  {
     role: 'Estagiário de TI',
     company: 'UNIVASF · STI, Petrolina-PE',
-    period: 'Fev/2025 – atual',
+    period: 'Fev/2025 – Dez/2025',
     description:
       'Desenvolvimento de aplicações para sistemas internos da instituição com Flutter e Docker, integração com APIs existentes e apoio aos projetos internos de TI.',
   },
